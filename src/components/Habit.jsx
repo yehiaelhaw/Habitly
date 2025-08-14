@@ -1,4 +1,5 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 import {
     Card, CardHeader, CardContent, CardActions,
     Avatar, IconButton, Typography,
@@ -58,5 +59,15 @@ function Habit(props) {
         </Card>
     );
 }
+
+Habit.propTypes = {
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    checked: PropTypes.bool.isRequired,
+    streak: PropTypes.number.isRequired,
+    handleChange: PropTypes.func.isRequired,
+    handleRemove: PropTypes.func.isRequired
+};
 
 export default Habit;
